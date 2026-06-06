@@ -135,9 +135,7 @@ jupyter notebook
 
 Open:
 
-```text
 notebooks/airbnb_market_analysis.ipynb
-```
 
 Run all cells from top to bottom.
 
@@ -220,6 +218,22 @@ Interactive charts allow stakeholders to explore pricing relationships more effe
 - Some luxury listings were removed during outlier treatment.
 
 ---
+
+## Stretch Goal Implementation
+
+A basic Streamlit dashboard was developed to provide an interactive view of the Airbnb market data.
+
+Features include:
+
+- Borough filtering
+- Interactive Plotly visualizations
+- Market summary metrics
+- Geographic listing exploration
+
+To run the dashboard locally:
+
+```bash
+streamlit run app.py
 
 ## Future Improvements
 
