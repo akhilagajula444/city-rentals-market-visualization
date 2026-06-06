@@ -33,9 +33,12 @@ The analysis answers the following questions:
 ## Dataset
 
 **Dataset:** NYC Airbnb Open Data
-source:https://www.kaggle.com/datasets/dgomonov/new-york-city-airbnb-open-data?resource=download
 
 **Source:** Kaggle
+
+Dataset Link:
+
+https://www.kaggle.com/datasets/dgomonov/new-york-city-airbnb-open-data
 
 The dataset includes:
 
@@ -53,11 +56,7 @@ The dataset includes:
 
 The dataset is not included in this repository according to the assessment guidelines.
 
-Download the dataset and place:
-
-AB_NYC_2019.csv
-
-inside the `data/` folder before running the notebook.
+Download `AB_NYC_2019.csv` and place it inside the `data/` folder before running the notebook.
 
 ---
 
@@ -70,6 +69,7 @@ inside the `data/` folder before running the notebook.
 - Seaborn
 - Plotly
 - Jupyter Notebook
+- Streamlit
 
 ---
 
@@ -81,23 +81,20 @@ city-rentals-market-visualization/
 ├── data/
 ├── notebooks/
 │   └── airbnb_market_analysis.ipynb
-│
 ├── reports/
-│   └── airbnb_market_report.html
-│
-├── images/
-│
+│   └── airbnb_market_analysis.html
 ├── README.md
 ├── requirements.txt
-└── .gitignore
+├── .gitignore
+└── app.py
 ```
 
 ## Setup Instructions
 
-### Clone the Repository
+### Clone Repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/akhilagajula444/city-rentals-market-visualization.git
 cd city-rentals-market-visualization
 ```
 
@@ -135,7 +132,9 @@ jupyter notebook
 
 Open:
 
+```text
 notebooks/airbnb_market_analysis.ipynb
+```
 
 Run all cells from top to bottom.
 
@@ -221,26 +220,31 @@ Interactive charts allow stakeholders to explore pricing relationships more effe
 
 ## Stretch Goal Implementation
 
-A basic Streamlit dashboard was developed to provide an interactive view of the Airbnb market data.
+A Streamlit dashboard was developed as an additional enhancement beyond the core project requirements.
 
-Features include:
+### Features
 
 - Borough filtering
 - Interactive Plotly visualizations
 - Market summary metrics
 - Geographic listing exploration
 
-To run the dashboard locally:
+### Run the Dashboard
 
 ```bash
 streamlit run app.py
+```
+
+The dashboard provides an interactive way for users to explore Airbnb market trends across New York City boroughs.
+
+---
 
 ## Future Improvements
 
 - Historical trend analysis using multiple Airbnb snapshots.
 - Occupancy and booking data integration.
 - Revenue estimation models.
-- Interactive Streamlit dashboard.
+- Enhanced Streamlit dashboard with advanced filters.
 - Neighborhood-level investment scoring.
 - Predictive modeling for Airbnb pricing.
 
@@ -252,4 +256,3 @@ The New York City Airbnb market is dominated by Manhattan and Brooklyn in terms 
 
 Successful investment decisions should consider pricing potential, competition levels, and neighborhood characteristics rather than focusing solely on listing volume or premium pricing.
 
----
