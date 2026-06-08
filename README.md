@@ -2,31 +2,39 @@
 
 ## Project Overview
 
-This project analyzes the New York City Airbnb market using the NYC Airbnb Open Data dataset. The objective is to transform raw listing data into a clear visual narrative that helps property investors understand pricing patterns, listing concentration, competition levels, and potential investment opportunities.
+This project analyzes the New York City Airbnb market using the NYC Airbnb Open Data dataset and transforms raw listing data into a visual investment report.
 
-The analysis focuses on identifying:
+The goal is to help property investors understand:
 
-- Which boroughs have the highest concentration of Airbnb listings
-- How prices vary across boroughs and room types
-- Which neighborhoods command premium pricing
-- Which areas appear oversupplied
-- Geographic patterns in listing distribution
+- Listing concentration across boroughs
+- Pricing patterns by borough and room type
+- High-value neighborhoods
+- Market competition levels
+- Geographic distribution of listings
+
+The final deliverables include:
+
+- Jupyter Notebook analysis
+- Professional HTML business report
+- Interactive Plotly visualizations
+- Interactive geospatial map
+- Streamlit dashboard (Stretch Goal)
 
 ---
 
 ## Business Problem
 
-A property investment analyst wants to understand the short-term rental market in New York City and identify locations that offer attractive investment opportunities.
+A property-investment analyst wants to understand the short-term rental market in New York City and identify attractive investment opportunities.
 
-The analysis answers the following questions:
+This project answers:
 
 1. Which borough contains the highest number of Airbnb listings?
 2. How do Airbnb listing prices vary across boroughs?
 3. How does room type affect Airbnb pricing?
-4. Which neighborhoods have the highest median Airbnb prices?
-5. Which neighborhoods have the highest number of Airbnb listings?
+4. Which neighborhoods command premium prices?
+5. Which neighborhoods have the highest listing concentration?
 6. How do prices vary across boroughs and room types?
-7. Where are Airbnb listings geographically concentrated across New York City?
+7. Where are Airbnb listings geographically concentrated?
 
 ---
 
@@ -40,36 +48,63 @@ Dataset Link:
 
 https://www.kaggle.com/datasets/dgomonov/new-york-city-airbnb-open-data
 
-The dataset includes:
+The dataset contains:
 
-- Listing Name
-- Host Information
-- Borough
-- Neighborhood
-- Room Type
+- Listing information
+- Host information
+- Borough and neighborhood
+- Room type
 - Price
 - Availability
-- Latitude
-- Longitude
+- Latitude and longitude
 
 ### Dataset Access
 
-The dataset is not included in this repository according to the assessment guidelines.
+The dataset is not committed to the repository.
 
-Download `AB_NYC_2019.csv` and place it inside the `data/` folder before running the notebook.
+Download:
+
+```
+AB_NYC_2019.csv
+```
+
+Place it in:
+
+```
+data/
+```
+
+before running the project.
 
 ---
 
 ## Technologies Used
+
+### Core Analysis
 
 - Python 3.10+
 - Pandas
 - NumPy
 - Matplotlib
 - Seaborn
+
+### Interactive Visualizations
+
 - Plotly
-- Jupyter Notebook
+
+### Reporting
+
+- HTML
+- CSS
+
+### Dashboard
+
 - Streamlit
+
+### Development Environment
+
+- Jupyter Notebook
+- Virtual Environment (venv)
 
 ---
 
@@ -77,17 +112,32 @@ Download `AB_NYC_2019.csv` and place it inside the `data/` folder before running
 
 ```text
 city-rentals-market-visualization/
+
 │
 ├── data/
+│
+├── images/
+│   ├── question1.png
+│   ├── question2.png
+│   ├── question3.png
+│   ├── question4.png
+│   └── question5.png
+│
 ├── notebooks/
 │   └── airbnb_market_analysis.ipynb
+│
 ├── reports/
-│   └── airbnb_market_analysis.html
-├── README.md
+│   ├── airbnb_market_analysis.html
+│   ├── geospatial_map.html
+│   └── price_analysis.html
+│
+├── app.py
 ├── requirements.txt
-├── .gitignore
-└── app.py
+├── README.md
+└── .gitignore
 ```
+
+---
 
 ## Setup Instructions
 
@@ -95,6 +145,7 @@ city-rentals-market-visualization/
 
 ```bash
 git clone https://github.com/akhilagajula444/city-rentals-market-visualization.git
+
 cd city-rentals-market-visualization
 ```
 
@@ -106,13 +157,13 @@ python -m venv venv
 
 ### Activate Virtual Environment
 
-Windows:
+Windows
 
 ```bash
 venv\Scripts\activate
 ```
 
-Mac/Linux:
+Mac/Linux
 
 ```bash
 source venv/bin/activate
@@ -124,7 +175,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### Launch Jupyter Notebook
+### Launch Notebook
 
 ```bash
 jupyter notebook
@@ -136,31 +187,147 @@ Open:
 notebooks/airbnb_market_analysis.ipynb
 ```
 
-Run all cells from top to bottom.
+Run all cells.
 
 ---
 
 ## Data Cleaning
 
-The following cleaning steps were performed:
+The following preprocessing steps were applied:
 
-- Removed listings with price = 0 because they represent invalid entries.
-- Removed listings with price > 1000 to reduce the influence of extreme luxury properties.
-- Created a cleaned dataset for analysis while preserving the original data.
+### Invalid Prices Removed
+
+Removed listings with:
+
+```text
+price = 0
+```
+
+These entries represent invalid or incomplete listings.
+
+### Outlier Treatment
+
+Removed listings with:
+
+```text
+price > 1000
+```
+
+to reduce the impact of extreme luxury properties on the analysis.
+
+### Clean Dataset Creation
+
+A cleaned analytical dataset was created while preserving the original source data.
 
 ---
 
 ## Visualizations Included
 
-- Borough Listing Distribution
-- Price Distribution by Borough
-- Price Distribution by Room Type
-- Top Neighborhoods by Median Price
-- Neighborhood Listing Concentration Analysis
-- Interactive Plotly Price Comparison
-- Geospatial Distribution Map
+### Question 1
 
-Each visualization includes a business insight explaining the key takeaway.
+**Listing Distribution by Borough**
+
+**Insight**
+
+Manhattan and Brooklyn contain the highest concentration of Airbnb listings.
+
+---
+
+### Question 2
+
+**Price Distribution by Borough**
+
+**Insight**
+
+Manhattan commands the highest median Airbnb prices.
+
+---
+
+### Question 3
+
+**Price Distribution by Room Type**
+
+**Insight**
+
+Entire-home listings achieve substantially higher prices than private or shared rooms.
+
+---
+
+### Question 4
+
+**Top Neighborhoods by Median Price**
+
+**Insight**
+
+A small number of neighborhoods dominate premium pricing.
+
+---
+
+### Question 5
+
+**Neighborhood Listing Concentration**
+
+**Insight**
+
+Certain neighborhoods show signs of stronger market competition.
+
+---
+
+### Question 6
+
+**Interactive Price Analysis Dashboard**
+
+File:
+
+```text
+reports/price_analysis_dashboard.html
+```
+
+**Insight**
+
+Pricing varies significantly across both boroughs and room types.
+
+Interactive Plotly visualizations allow stakeholders to explore pricing patterns dynamically.
+
+---
+
+### Question 7
+
+**Interactive Geospatial Analysis**
+
+File:
+
+```text
+reports/airbnb_geospatial_analysis.html
+```
+
+**Insight**
+
+Listings are heavily concentrated in Manhattan and Brooklyn.
+
+The interactive map reveals geographic pricing clusters and market hotspots.
+
+---
+
+## Professional HTML Report
+
+A business-focused HTML report was developed to communicate findings to non-technical stakeholders.
+
+Report:
+
+```text
+reports/Airbnb_Report.html
+```
+
+The report includes:
+
+- Executive Summary
+- Data Cleaning
+- Visual Analysis
+- Interactive Visualizations
+- Investor Recommendations
+- Limitations
+- Conclusion
 
 ---
 
@@ -168,91 +335,102 @@ Each visualization includes a business insight explaining the key takeaway.
 
 ### Why Remove Outliers?
 
-The dataset contained listings priced as high as $10,000. These values significantly distorted the price distribution and made it difficult to analyze the broader Airbnb market.
+Some listings exceeded $10,000 per night.
+
+These values distorted price distributions and reduced analytical clarity.
 
 ### Why Use Median Prices?
 
-Median prices are less sensitive to extreme values and better represent the typical listing price within a neighborhood.
+Median values provide a more representative measure of typical Airbnb pricing.
 
 ### Why Use Boxplots?
 
-Airbnb prices are highly skewed. Boxplots effectively show median values, spread, variability, and outliers.
+Airbnb prices are heavily skewed.
 
-### Why Include a Geospatial Visualization?
+Boxplots effectively show:
 
-Location is one of the strongest factors affecting Airbnb pricing. Geographic visualizations reveal clustering patterns and location-based pricing trends.
+- Median
+- Spread
+- Variability
+- Outliers
 
-### Why Include an Interactive Plotly Chart?
+### Why Use Interactive Visualizations?
 
-Interactive charts allow stakeholders to explore pricing relationships more effectively than static visualizations.
+Interactive charts provide deeper exploration capabilities than static charts.
+
+Stakeholders can examine patterns without modifying the code.
+
+### Why Use a Geospatial Visualization?
+
+Location strongly influences Airbnb pricing and demand.
+
+Mapping listings helps identify premium investment zones and market concentration.
 
 ---
 
 ## Key Findings
 
-- Manhattan contains the highest concentration of Airbnb listings.
+- Manhattan contains the largest number of Airbnb listings.
 - Manhattan generally commands the highest listing prices.
-- Entire-home listings achieve significantly higher prices than private or shared rooms.
-- A small number of neighborhoods command premium pricing.
-- Listing density is concentrated within a limited set of neighborhoods.
-- Location is a major factor influencing Airbnb pricing.
+- Entire-home listings achieve premium pricing.
+- Premium pricing is concentrated within a limited set of neighborhoods.
+- Competition is concentrated in specific areas.
+- Geographic location remains a primary driver of Airbnb pricing.
 
 ---
 
 ## Investor Recommendations
 
-1. Focus on neighborhoods that balance strong pricing potential with moderate competition.
-2. Entire-home listings may provide stronger revenue opportunities than private or shared accommodations.
-3. Evaluate both pricing and competition before investing.
-4. Use location-based analysis as a primary factor when identifying investment opportunities.
+1. Focus on neighborhoods balancing pricing potential and competition.
+2. Prioritize entire-home listings where feasible.
+3. Consider both location and competition before investing.
+4. Use geographic analysis alongside pricing analysis when evaluating opportunities.
 
 ---
 
 ## Limitations
 
-- Historical snapshot only.
-- Occupancy and booking information are unavailable.
-- Revenue and profitability cannot be calculated directly.
-- Seasonal demand patterns are not included.
-- Some luxury listings were removed during outlier treatment.
+- Single historical dataset snapshot
+- No occupancy information
+- No booking information
+- Revenue cannot be calculated directly
+- Seasonal effects are not included
+- Luxury outliers were intentionally removed
 
 ---
 
 ## Stretch Goal Implementation
 
-A Streamlit dashboard was developed as an additional enhancement beyond the core project requirements.
+A Streamlit dashboard was developed beyond the project requirements.
 
-### Features
+### Dashboard Features
 
 - Borough filtering
-- Interactive Plotly visualizations
+- Interactive Plotly charts
 - Market summary metrics
-- Geographic listing exploration
+- Geographic exploration
 
-### Run the Dashboard
+### Run Dashboard
 
 ```bash
 streamlit run app.py
 ```
 
-The dashboard provides an interactive way for users to explore Airbnb market trends across New York City boroughs.
-
 ---
 
 ## Future Improvements
 
-- Historical trend analysis using multiple Airbnb snapshots.
-- Occupancy and booking data integration.
-- Revenue estimation models.
-- Enhanced Streamlit dashboard with advanced filters.
-- Neighborhood-level investment scoring.
-- Predictive modeling for Airbnb pricing.
+- Historical trend analysis
+- Occupancy integration
+- Revenue forecasting
+- Enhanced dashboard filtering
+- Neighborhood investment scoring
+- Airbnb price prediction models
 
 ---
 
 ## Conclusion
 
-The New York City Airbnb market is dominated by Manhattan and Brooklyn in terms of listing concentration. Manhattan generally commands higher prices, while entire-home listings achieve premium pricing compared with private and shared rooms. Geographic location remains the strongest factor influencing pricing and market activity.
+The New York City Airbnb market is heavily concentrated in Manhattan and Brooklyn. Pricing varies significantly by location and room type, with entire-home listings commanding premium rates. Combining pricing analysis, competition assessment, and geographic insights provides a strong foundation for investment decision-making.
 
-Successful investment decisions should consider pricing potential, competition levels, and neighborhood characteristics rather than focusing solely on listing volume or premium pricing.
-
+---
